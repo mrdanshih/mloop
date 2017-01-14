@@ -43,10 +43,19 @@
 				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
 			</select>
 			<form action="upload.php" method="POST" enctype="multipart/form-data">
-				<input type="file" name="fileToUpload" id="fileToUpload", accept=".mp3,.wav,.m4a,.aac">
+				<uploadfile><input type="file" name="fileToUpload" id="fileToUpload", accept=".mp3,.wav,.m4a,.aac"></uploadfile>
 				<input type="text" name="displayName">
-				<input type="submit" value="Submit" name="submit">
+				<submit><input type="submit" value="Submit" name="submit"></submit>
 			</form>
 		</div>
+		<script src="jquery.js"></script>
+		<script>
+		$( "uploadfile" ).change(function() {
+			var fileext = $("#fileToUpload").val().split('.').pop();
+			if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
+				alert('invalid extension!');
+			}
+		});
+		</script>
 	</body>
 </html>
