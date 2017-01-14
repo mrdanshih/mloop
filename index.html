@@ -1,6 +1,60 @@
 <!DOCTYPE html>
-
 <html lang='en'>
+<head>
+	<meta charset="UTF-8" />
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <title>REPL▶Y!</title>
+</head>
+<body>
+    <div id="title"><img alt="Repl▶y!: Music On Loop" src=
+    "images/logo.png"></div>
+    <div id="main">
+        <!--Place audio player here-->
+        <div id="player">
+            <audio controls="">
+            <!--Need to change this to correspond to chosen music file--></audio>
+        </div><!--need to add skip previous and next buttons-->
+        <div id="options">
+            <h1>Options</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Number of times to play song:<input></td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Gap time in between playbacks:<input></td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Snippet of the song (Optional):<input type="text" name="startMin" placeholder="min">&#58;<input type="text" name="startSec" placeholder="start sec"></td>
+                        <td>~<input type="text" name="endMin" placeholder="min">&#58;<input type="text" name="endSec" placeholder="sec"></td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="sidebar">
+        <!--Place title bar here "list of songs"-->
+        <h1>List of Songs</h1><!--Place music file list here-->
+        <select>
+            <option value="paris.mp3">
+                Paris - The Chainsmokers, Louane
+            </option>
+        </select>
+        <form action="upload.php" method="get">
+            <div class="fileUpload">
+                <span>Upload</span><input class="upload" id="fileToUpload"
+                name="fileToUpload" type="file">
+            </div><input name="displayName" type="text"> <input name="submit"
+            type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+<footer>
+	<a href="https://github.com/mrdanshih/mloop"><img src="images/octocat.png" alt="GitHub"></a>
+</footer>
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
