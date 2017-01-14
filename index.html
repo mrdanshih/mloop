@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+	<body>
+		<div id= "main">
+		<!--Place title bar here "app title"-->
+		<h1>REPLAY</h1>
+		<!--Place audio player here-->
+		<audio controls>
+			<!--Need to change this to correspond to chosen music file-->
+		</audio>
+		<!--need to add skip previous and next buttons-->
+			<div id= "options">
+				<h1> Options </h1>
+				<table>
+					<tbody>
+						<tr>
+							<td>Number of times to play song: <textarea rows="1" cols="3"></textarea></td>
+							<td><button type="button">Apply</button></td>
+						</tr>
+						<tr>
+							<td>Gap time in between playbacks <textarea rows="1" cols="3"></textarea></td>
+							<td><button type="button">Apply</button></td>
+						</tr>
+						<tr>
+							<td>Optional: Snippet of the song you want to playback &#40;Default: whole song&#41;
+							<textarea style="resize:none" rows="1" cols="1"></textarea>&#58;<textarea style="resize:none" rows="1" cols="1"></textarea></td>
+							<td>~<textarea style="resize:none" rows="1" cols="1"></textarea>&#58;<textarea style="resize:none" rows="1" cols="1"></textarea></td>
+							<td><button type="button">Apply</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id= "sidebar">
+			<!--Place title bar here "list of songs"-->
+			<h1> List of Songs </h1>
+			<!--Place music file list here-->
+			<select>
+				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
+			</select>
+			<form action="upload.php" method="get">
+				<input type="file" name="fileToUpload" id="fileToUpload">
+				<input type="text" name="displayName">
+				<input type="submit" value="Submit" name="submit">
+			</form>
+		</div>
+	</body>
+</html>
