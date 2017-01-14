@@ -5,13 +5,16 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
+		<div id="title">
+			<h1>REPLAY</h1>
+		</div>
 		<div id= "main">
-		<!--Place title bar here "app title"-->
-		<h1>REPLAY</h1>
 		<!--Place audio player here-->
-		<audio controls>
-			<!--Need to change this to correspond to chosen music file-->
-		</audio>
+		<div id="player">
+			<audio controls>
+				<!--Need to change this to correspond to chosen music file-->
+			</audio>
+		</div>
 		<!--need to add skip previous and next buttons-->
 			<div id= "options">
 				<h1> Options </h1>
@@ -42,7 +45,7 @@
 			<select>
 				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
 			</select>
-			<form action="upload.php" method="POST" enctype="multipart/form-data">
+			<form action="upload.php" method="get">
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				<input type="text" name="displayName">
 				<input type="submit" value="Submit" name="submit">

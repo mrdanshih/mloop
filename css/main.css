@@ -1,7 +1,37 @@
 html {
     font-family: sans-serif;
+    width: 80%;
+    height: 85%;
+    background: aqua;
+    margin: auto;
+    padding: 10px;
 }
 
-.main {
+body {
+    height: 100%;
+}
 
+#main {
+    width: 60%;
+    height: 100%;
+    background: red;
+    float: left;
+}
+
+#options {
+    background: blue;
+    width: 90%;
+    margin: auto;
+}
+
+#sidebar {
+    margin-left: 60%;
+    height: 100%;
+    background: grey;
+}
+
+#player {
+    margin: auto;
+    width: 50%;
+    padding-top: 10%;
 }
