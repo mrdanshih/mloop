@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-
 <html lang='en'>
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-	</head>
-	<body>
-		<div id="title">
-			<img src="images/logo.png" alt="Repl>y!: Music On Loop">
-		</div>
-		<div id= "main">
-		<!--Place audio player here-->
-		<div id="player">
-			<audio controls>
-				<!--Need to change this to correspond to chosen music file-->
-			</audio>
-		</div>
-		<!--need to add skip previous and next buttons-->
-			<div id= "options">
-				<h1> Options </h1>
-				<table>
-					<tbody>
-						<tr>
-							<td>Number of times to play song: <input rows="1" cols="3"></input></td>
-							<td><button type="button">Apply</button></td>
-						</tr>
-						<tr>
-							<td>Gap time in between playbacks <input rows="1" cols="3"></input></td>
-							<td><button type="button">Apply</button></td>
-						</tr>
-						<tr>
-							<td>Optional: Snippet of the song you want to playback &#40;Default: whole song&#41;
-							<input style="resize:none" rows="1" cols="1"></input>&#58;<input style="resize:none" rows="1" cols="1"></input></td>
-							<td>~<input style="resize:none" rows="1" cols="1"></input>&#58;<input style="resize:none" rows="1" cols="1"></input></td>
-							<td><button type="button">Apply</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div id= "sidebar">
-			<!--Place title bar here "list of songs"-->
-			<h1> List of Songs </h1>
-			<!--Place music file list here-->
-			<select>
-				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
-			</select>
-			<form action="upload.php" method="get">
-				<div class="fileUpload"><span>Upload</span><input type="file" class="upload" name="fileToUpload" id="fileToUpload"></div>
-				<input type="text" name="displayName">
-				<input type="submit" value="Submit" name="submit">
-			</form>
-		</div>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <title>REPL▶Y!</title>
+</head>
+<body>
+    <div id="title"><img alt="Repl▶y!: Music On Loop" src=
+    "images/logo.png"></div>
+    <div id="main">
+        <!--Place audio player here-->
+        <div id="player">
+            <audio controls="">
+            <!--Need to change this to correspond to chosen music file--></audio>
+        </div><!--need to add skip previous and next buttons-->
+        <div id="options">
+            <h1>Options</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Number of times to play song:<input></td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Gap time in between playbacks:<input></td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Optional: Snippet of the song you want to playback
+                        &#40;Default: whole song&#41; <input style=
+                        "resize:none">&#58;<input style="resize:none"></td>
+                        <td>~<input style="resize:none">&#58;<input style=
+                        "resize:none"></td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="sidebar">
+        <!--Place title bar here "list of songs"-->
+        <h1>List of Songs</h1><!--Place music file list here-->
+        <select>
+            <option value="paris.mp3">
+                Paris - The Chainsmokers, Louane
+            </option>
+        </select>
+        <form action="upload.php" method="get">
+            <div class="fileUpload">
+                <span>Upload</span><input class="upload" id="fileToUpload"
+                name="fileToUpload" type="file">
+            </div><input name="displayName" type="text"> <input name="submit"
+            type="submit" value="Submit">
+        </form>
+    </div>
+</body>
 </html>
