@@ -21,6 +21,14 @@ body {
     height: 100%;
     font-size: 16px;
 }
+footer {
+    height: 20%;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+footer img {
+    height: 75%;
+}
 #options input {
     width: 100px;
     padding: 12px 20px;
