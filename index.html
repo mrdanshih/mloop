@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div id="title">
-			<h1>REPLAY</h1>
+			<img src="images/logo.png" alt="Repl>y!: Music On Loop">
 		</div>
 		<div id= "main">
 		<!--Place audio player here-->
@@ -21,17 +21,17 @@
 				<table>
 					<tbody>
 						<tr>
-							<td>Number of times to play song: <textarea rows="1" cols="3"></textarea></td>
+							<td>Number of times to play song: <input rows="1" cols="3"></input></td>
 							<td><button type="button">Apply</button></td>
 						</tr>
 						<tr>
-							<td>Gap time in between playbacks <textarea rows="1" cols="3"></textarea></td>
+							<td>Gap time in between playbacks <input rows="1" cols="3"></input></td>
 							<td><button type="button">Apply</button></td>
 						</tr>
 						<tr>
 							<td>Optional: Snippet of the song you want to playback &#40;Default: whole song&#41;
-							<textarea style="resize:none" rows="1" cols="1"></textarea>&#58;<textarea style="resize:none" rows="1" cols="1"></textarea></td>
-							<td>~<textarea style="resize:none" rows="1" cols="1"></textarea>&#58;<textarea style="resize:none" rows="1" cols="1"></textarea></td>
+							<input style="resize:none" rows="1" cols="1"></input>&#58;<input style="resize:none" rows="1" cols="1"></input></td>
+							<td>~<input style="resize:none" rows="1" cols="1"></input>&#58;<input style="resize:none" rows="1" cols="1"></input></td>
 							<td><button type="button">Apply</button></td>
 						</tr>
 					</tbody>
@@ -46,7 +46,7 @@
 				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
 			</select>
 			<form action="upload.php" method="get">
-				<input type="file" name="fileToUpload" id="fileToUpload">
+				<div class="fileUpload"><span>Upload</span><input type="file" class="upload" name="fileToUpload" id="fileToUpload"></div>
 				<input type="text" name="displayName">
 				<input type="submit" value="Submit" name="submit">
 			</form>
