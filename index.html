@@ -42,7 +42,7 @@
 			<select>
 				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
 			</select>
-			<form action="upload.php" method="get">
+			<form action="upload.php" method="POST" enctype="multipart/form-data">
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				<input type="text" name="displayName">
 				<input type="submit" value="Submit" name="submit">
