@@ -54,6 +54,7 @@
 			var fileext = $("#fileToUpload").val().split('.').pop();
 			if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
 				alert('invalid extension!');
+				$("#fileToUpload").val('')
 			}
 		});
 		</script>
