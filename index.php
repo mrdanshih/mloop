@@ -47,20 +47,22 @@
     <div id="sidebar">
         <div id="songlist">
             <h1>List of Songs</h1>
-            <select name='selectedSong'>
-                <?php
-				$servername = "localhost";
-				$username = "dan";
-				$password = "hello";
-				$dbname = "mlooper";
-				$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
-				$sql_query = mysqli_query($conn, "SELECT name FROM music");
-				while($row = $sql_query->fetch_assoc()){
-				echo "<option>" . $row['name'] . "</option>";
-				}
-				?>
-            </select>
-            <input class="buttonTransition" name="submitList" type="submit" value="Play">
+            <form action="sendMusic.php" enctype="multipart/form-data" method="post">
+                <select name="selectedSong">
+                    <?php
+    				$servername = "localhost";
+    				$username = "dan";
+    				$password = "hello";
+    				$dbname = "mlooper";
+    				$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
+    				$sql_query = mysqli_query($conn, "SELECT name FROM music");
+    				while($row = $sql_query->fetch_assoc()){
+    				echo "<option>" . $row['name'] . "</option>";
+    				}
+    				?>
+                </select>
+                <input class="buttonTransition" name="submitList" type="submit" value="Play">
+            </form>
         </div>
         <div id="upload">
             <h1>Upload</h1>
