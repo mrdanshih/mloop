@@ -41,12 +41,13 @@
                         </td>
                     </tr>
                 </tbody>
-            </table><button class="button_transition" type="button">Apply</button>
+            </table><button class="buttonTranstition" type="button">Apply</button>
         </div>
     </div>
     <div id="sidebar">
         <div id="songlist">
-            <h1>List of Songs</h1><select name='selected_song'>
+            <h1>List of Songs</h1>
+            <select name='selectedSong'>
                 <?php
 				$servername = "localhost";
 				$username = "dan";
@@ -59,6 +60,7 @@
 				}
 				?>
             </select>
+            <input class="buttonTranstition" name="submitList" type="submit" value="Play">
         </div>
         <div id="upload">
             <h1>Upload</h1>
@@ -66,7 +68,7 @@
                 <uploadfile>
                     <input id="fileToUpload" accept=".mp3,.wav,.m4a,.aac"  name="fileToUpload" type="file">
                     <input name="displayName" placeholder="File Name" type="text">
-                    <input class="button_transition" name="submit" type="submit" value="Submit">
+                    <input class="buttonTranstition" name="submitUpload" type="submit" value="Submit">
                 </uploadfile>
             </form>
         </div>

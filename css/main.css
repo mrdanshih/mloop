@@ -1,8 +1,8 @@
 :root {
-    --main-color: #0E6BA8;
+    --main-color: #22B14C;
     --secondary-color: #001427;
-    --tertiary-color: #3DA5D9;
-    --light-color: #ECF8F8;
+    --dark-color: #121619;
+    --light-color: #FBFFFE;
     --border-width-default: 2px;
     --border-radius-default: 5px;
 }
@@ -46,7 +46,7 @@ footer img {
 #options input:focus {
     border-color: var(--light-color);
 }
-.button_transition {
+.buttonTranstition {
     width: 100%;
     margin-top: 10px;
     background-color: var(--main-color);
@@ -62,7 +62,7 @@ footer img {
     transition-duration: 0.4s;
     outline: none;
 }
-.button_transition:hover {
+.buttonTranstition:hover {
     background-color: var(--secondary-color);
     color: var(--light-color);
 }
@@ -78,7 +78,7 @@ footer img {
     margin: auto;
 }
 #main {
-    background-color: #0E6BA8;
+    background-color: var(--main-color);
     width: 60%;
     height: 100%;
     float: left;
@@ -88,7 +88,7 @@ footer img {
     margin: auto;
 }
 #options table::placeholder {
-    color: var(--tertiary-color);
+    color: var(--dark-color);
 }
 #sidebar {
     margin-left: 60%;
