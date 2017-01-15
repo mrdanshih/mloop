@@ -15,6 +15,33 @@
 
 </script>
 
+
+<!-- <select name="taskOption">
+  <option value="1">First</option>
+  <option value="2">Second</option>
+  <option value="3">Third</option>
+</select> -->
+
+<?php
+// $servername = "localhost";
+// $username = "dan";
+// $password = "hello";
+// $dbname = "mlooper";
+//
+//
+// $conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
+//
+// $display_name = $_POST["songs_list"];
+//
+// $sql_query = mysqli_query($conn, "SELECT file_path FROM music WHERE name = 'Stonehenge' limit 1");
+// $query_row = mysqli_fetch_assoc($sql_query);
+// $file = $query_row["file_path"];
+//
+// echo $file;
+
+?>
+
+
 <select name='songs'>
   <?php
   $servername = "localhost";

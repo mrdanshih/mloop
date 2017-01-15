@@ -1,23 +1,33 @@
 <?php
-//$filename = $_GET['Fire.mp3'];
-if(isset($_REQUEST["submit"])){
-    $display_name= $_REQUEST['displayName'];
-}
+$servername = "localhost";
+$username = "dan";
+$password = "hello";
+$dbname = "mlooper";
 
-$file = "songs/Fire.mp3";
+$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
+
+$display_name = $_GET["songs_list"];
+
+$sql_query = mysqli_query($conn, "SELECT file_path FROM music WHERE name = 'Adele' limit 1");
+$query_row = mysqli_fetch_assoc($sql_query);
+$file = $query_row["file_path"];
+
+// $dir = "songs";
+// $filename = "paris.mp3";
+// $file = $dir."/".$filename;
+
 $extension = "mp3";
 $mime_type = "audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3";
-readfile($file);
-if(file_exists("songs/Fire.mp3")){
-    echo "YAY";
+
+
+if(file_exists($file)){
     header('Content-type: {$mime_type}');
     header('Content-length: ' . filesize($file));
     header('Content-Disposition: filename="' . $filename);
     header('X-Pad: avoid browser bug');
     header('Cache-Control: no-cache');
-    readfile("songs/Fire.mp3");
+    readfile($file);
 }else{
-    echo "NO";
     header("HTTP/1.0 404 Not Found");
 }
 
