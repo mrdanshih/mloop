@@ -51,18 +51,19 @@
             </option>
         </select>
         <form action="upload.php" enctype="multipart/form-data" method="post">
-            <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
-            "fileToUpload" type="file"> <input name="displayName" type="text">
+            <uploadfile><input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
+            "fileToUpload" type="file"> <input name="displayName" type="text"></uploadfile>
             <input name="submit" type="submit" value="Submit">
         </form>
     </div>
+    <script src="jquery.js"></script>
     <script>
-    $( "uploadfile" ).change(function() {
-    var fileext = $("#fileToUpload").val().split('.').pop();
-    if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
+      $( "uploadfile" ).change(function() {
+      var fileext = $("#fileToUpload").val().split('.').pop();
+      if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
         alert('invalid extension!');
         $("#fileToUpload").val('')
-    }
+      }
     });
     </script>
     <footer>
