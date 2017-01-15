@@ -10,7 +10,7 @@
     <div id="title"><img alt="Repl▶y!: Music On Loop" src="images/logo.png"></div>
     <div id="main">
         <div id="player">
-            <audio id="song" autostart="0" controls="" src="process.php">
+            <audio id="song" autostart="0" controls="" src="retrieveMusic.php">
                 <source src="mm.ogv" type="video/ogv">
                 <source src="mm.mp3" type="video/mp3">
             </audio>
