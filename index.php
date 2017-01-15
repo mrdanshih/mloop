@@ -22,21 +22,26 @@
                 <tbody>
                     <tr>
                         <td>Number of times to play song:<input placeholder="count"></td>
+                        <td></td>
                         <td><button type="button">Apply</button></td>
                     </tr>
                     <tr>
                         <td>Gap time in between playbacks:<input placeholder="seconds"></td>
+                        <td></td>
                         <td><button type="button">Apply</button></td>
                     </tr>
                     <tr>
-                        <td>Snippet of the song (Optional):<input name=
-                        "startMin" placeholder="min" type=
-                        "text">&#58;<input name="startSec" placeholder=
-                        "start sec" type="text"></td>
-                        <td>~<input name="endMin" placeholder="min" type=
-                        "text">&#58;<input name="endSec" placeholder="sec"
-                        type="text"></td>
-                        <td><button type="button">Apply</button></td>
+                        <td>Snippet of the song (Optional):
+                            <input name="startMin" placeholder="min" type="text">&#58;
+                            <input name="startSec" placeholder="start sec" type="text">
+                        </td>
+                        <td>~
+                            <input name="endMin" placeholder="min" type="text">&#58;
+                            <input name="endSec" placeholder="sec" type="text">
+                        </td>
+                        <td>
+                            <button type="button">Apply</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
