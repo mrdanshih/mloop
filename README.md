@@ -1,6 +1,6 @@
 # mloop
 ## Overview
-REPLAY! is a Web app for sharing and looping music online. 
+REPLAY! is a Web app for sharing and looping music online.  
 
 ## Features
 Sharing:
@@ -17,11 +17,6 @@ Several looping options provided.
 <li>  Loop a certain range of a song </li>
 <li>  Include a delay between loops  </li>
 </ul>
-
-## Introduction
-
-Developed at Hack UCI 2017, in 36 hours.
-
 
 ## Conceptual UI
 Though not fully deployed outside of a local server, a far more basic version of the front end UI can be viewed here: https://mloop.herokuapp.com/
@@ -48,3 +43,5 @@ Built from scratch using an Apache Server (XAAMP), MySQL, PHP, HTML/CSS, JavaScr
 * Daniel Shih 
 * Jayson Chao 
 * Umesh Tanniru
+
+Developed at Hack UCI 2017
