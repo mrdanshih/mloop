@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-	<meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>REPL▶Y!</title>
+    <script src="jquery.js">
+    </script>
 </head>
 <body>
     <div id="title"><img alt="Repl▶y!: Music On Loop" src=
@@ -27,8 +29,13 @@
                         <td><button type="button">Apply</button></td>
                     </tr>
                     <tr>
-                        <td>Snippet of the song (Optional):<input type="text" name="startMin" placeholder="min">&#58;<input type="text" name="startSec" placeholder="start sec"></td>
-                        <td>~<input type="text" name="endMin" placeholder="min">&#58;<input type="text" name="endSec" placeholder="sec"></td>
+                        <td>Snippet of the song (Optional):<input name=
+                        "startMin" placeholder="min" type=
+                        "text">&#58;<input name="startSec" placeholder=
+                        "start sec" type="text"></td>
+                        <td>~<input name="endMin" placeholder="min" type=
+                        "text">&#58;<input name="endSec" placeholder="sec"
+                        type="text"></td>
                         <td><button type="button">Apply</button></td>
                     </tr>
                 </tbody>
@@ -43,74 +50,24 @@
                 Paris - The Chainsmokers, Louane
             </option>
         </select>
-        <form action="upload.php" method="get">
-            <div class="fileUpload">
-                <span>Upload</span><input class="upload" id="fileToUpload"
-                name="fileToUpload" type="file">
-            </div><input name="displayName" type="text"> <input name="submit"
-            type="submit" value="Submit">
+        <form action="upload.php" enctype="multipart/form-data" method="post">
+            <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
+            "fileToUpload" type="file"> <input name="displayName" type="text">
+            <input name="submit" type="submit" value="Submit">
         </form>
     </div>
+    <script>
+    $( "uploadfile" ).change(function() {
+    var fileext = $("#fileToUpload").val().split('.').pop();
+    if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
+        alert('invalid extension!');
+        $("#fileToUpload").val('')
+    }
+    });
+    </script>
+    <footer>
+        <a href="https://github.com/mrdanshih/mloop"><img alt="GitHub" src=
+        "images/octocat.png"></a>
+    </footer>
 </body>
-<footer>
-	<a href="https://github.com/mrdanshih/mloop"><img src="images/octocat.png" alt="GitHub"></a>
-</footer>
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-	</head>
-	<body>
-		<div id= "main">
-		<!--Place title bar here "app title"-->
-		<h1>REPLAY</h1>
-		<!--Place audio player here-->
-		<audio controls>
-			<!--Need to change this to correspond to chosen music file-->
-		</audio>
-		<!--need to add skip previous and next buttons-->
-			<div id= "options">
-				<h1> Options </h1>
-				<table>
-					<tbody>
-						<tr>
-							<td>Number of times to play song: <textarea rows="1" cols="3"></textarea></td>
-							<td><button type="button">Apply</button></td>
-						</tr>
-						<tr>
-							<td>Gap time in between playbacks <textarea rows="1" cols="3"></textarea></td>
-							<td><button type="button">Apply</button></td>
-						</tr>
-						<tr>
-							<td>Optional: Snippet of the song you want to playback &#40;Default: whole song&#41;
-							<textarea style="resize:none" rows="1" cols="1"></textarea>&#58;<textarea style="resize:none" rows="1" cols="1"></textarea></td>
-							<td>~<textarea style="resize:none" rows="1" cols="1"></textarea>&#58;<textarea style="resize:none" rows="1" cols="1"></textarea></td>
-							<td><button type="button">Apply</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div id= "sidebar">
-			<!--Place title bar here "list of songs"-->
-			<h1> List of Songs </h1>
-			<!--Place music file list here-->
-			<select>
-				<option value="paris.mp3">Paris - The Chainsmokers, Louane</option>
-			</select>
-			<form action="upload.php" method="POST" enctype="multipart/form-data">
-				<uploadfile><input type="file" name="fileToUpload" id="fileToUpload", accept=".mp3,.wav,.m4a,.aac"></uploadfile>
-				<input type="text" name="displayName">
-				<submit><input type="submit" value="Submit" name="submit"></submit>
-			</form>
-		</div>
-		<script src="jquery.js"></script>
-		<script>
-		$( "uploadfile" ).change(function() {
-			var fileext = $("#fileToUpload").val().split('.').pop();
-			if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
-				alert('invalid extension!');
-				$("#fileToUpload").val('')
-			}
-		});
-		</script>
-	</body>
 </html>
