@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link href="images/favicon.ico" rel="icon" type="image/png">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>REPL▶Y!</title>
     <script src="jquery.js">
@@ -21,7 +21,6 @@
             <h1>Options</h1>
             <table>
                 <tbody>
-
                     <tr>
                         <td>Number of times to play song:</td>
                         <td><input placeholder="count"></td>
@@ -44,32 +43,35 @@
                         </td>
                     </tr>
                 </tbody>
-            </table>
-            <button type="button">Apply</button>
+            </table><button type="button">Apply</button>
         </div>
     </div>
     <div id="sidebar">
-        <h1>List of Songs</h1>
-        <select name='songs'>
-            <?php
-			$servername = "localhost";
-			$username = "dan";
-			$password = "hello";
-			$dbname = "mlooper";
-			$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
-			$sql_query = mysqli_query($conn, "SELECT name FROM music");
-			while($row = $sql_query->fetch_assoc()){
-			    echo "<option>" . $row['name'] . "</option>";
-			}
-			?>
-        </select>
-        <h1>Upload</h1>
-        <form action="upload.php" enctype="multipart/form-data" method="post">
-            <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
-            "fileToUpload" type="file">
-            <input name="displayName" type="text" placeholder="File Name">
-            <input name="submit" type="submit" value="Submit">
-        </form>
+        <div id="songlist">
+            <h1>List of Songs</h1><select name='selected_song'>
+                <?php
+				$servername = "localhost";
+				$username = "dan";
+				$password = "hello";
+				$dbname = "mlooper";
+				$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
+				$sql_query = mysqli_query($conn, "SELECT name FROM music");
+				while($row = $sql_query->fetch_assoc()){
+				echo "<option>" . $row['name'] . "</option>";
+				}
+				?>
+            </select>
+        </div>
+        <div id="upload">
+            <h1>Upload</h1>
+            <form action="upload.php" enctype="multipart/form-data" method=
+            "post">
+                <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
+                "fileToUpload" type="file"> <input name="displayName"
+                placeholder="File Name" type="text"> <input name="submit" type=
+                "submit" value="Submit">
+            </form>
+        </div>
     </div><!--Extension check-->
     <script src="jquery.js">
     </script>
