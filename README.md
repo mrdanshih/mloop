@@ -43,3 +43,8 @@ https://youtu.be/-qYLy7YW8Io
 Built from scratch using an Apache Server (XAAMP), MySQL, PHP, HTML/CSS, JavaScript/jQuery
 
 ## Contributors
+* Agnes Jang 
+* Brian Tom 
+* Daniel Shih 
+* Jayson Chao 
+* Umesh Tanniru
