@@ -7,41 +7,39 @@
     <title>REPL▶Y!</title>
 </head>
 <body>
-    <div id="title"><img alt="Repl▶y!: Music On Loop" src=
-    "images/logo.png"></div>
+    <div id="title"><img alt="Repl▶y!: Music On Loop" src="images/logo.png"></div>
     <div id="main">
-        <!--Place audio player here-->
         <div id="player">
-            <audio autoplay="" controls="" loop="">
-            <!--Need to change this to correspond to chosen music file--></audio>
-        </div><!--need to add skip previous and next buttons-->
+            <audio id="song" autostart="0" controls="" src="PLACEHOLDER.mp3">
+                <source src="mm.ogv" type="video/ogv">
+                <source src="mm.mp3" type="video/mp3">
+            </audio>
+        </div>
         <div id="options">
             <h1>Options</h1>
             <table>
                 <tbody>
                     <tr>
                         <td>Number of times to play song:</td>
-                        <td><input placeholder="count"></td>
+                        <td><input id="loopCount" placeholder="count"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Gap time in between playbacks:</td>
-                        <td><input placeholder="seconds"></td>
+                        <td><input id="breakTime" placeholder="seconds"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Snippet of the song (Optional):</td>
                         <td>
-                            <input name="startMin" placeholder="min" type="text">&#58;
-                            <input name="startSec" placeholder="start sec" type="text">
+                            <input id="startMin" placeholder="min" type="text">&#58;<input id="startSec" placeholder="start sec" type="text">
                         </td>
                         <td>~
-                            <input name="endMin" placeholder="min" type="text">&#58;
-                            <input name="endSec" placeholder="sec" type="text">
+                            <input id="endMin" placeholder="min" type="text">&#58;<input id="endSec" placeholder="sec" type="text">
                         </td>
                     </tr>
                 </tbody>
-            </table><button class="buttonTransition" type="button">Apply</button>
+            </table><button class="buttonTransition" type="button" onclick="updateOptions();">Apply</button>
         </div>
     </div>
     <div id="sidebar">
@@ -57,7 +55,7 @@
     				$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
     				$sql_query = mysqli_query($conn, "SELECT name FROM music");
     				while($row = $sql_query->fetch_assoc()){
-    				echo "<option>" . $row['name'] . "</option>";
+    				    echo "<option>" . $row['name'] . "</option>";
     				}
     				?>
                 </select>
@@ -85,25 +83,63 @@
                 $("#fileToUpload").val('')
         }});
     </script>
+    <!-- File and Filname Existence Validation -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type='text/javascript'>
     $(document).ready(function() {
-      //option A
-      $("form").submit(function(e){
-        if ($("#fileToUpload").val() == ''){
-          alert('Please select a file!');
-          e.preventDefault(e);
+        //option A
+        $("form").submit(function(e) {
+            if ($("#fileToUpload").val() == '') {
+                alert('Please select a file!');
+                e.preventDefault(e);
         }
-        else if ($("#filename").val() == ''){
-          alert('Please enter a name for your file!');
-          e.preventDefault(e);
+        else if ($("#filename").val() == '') {
+            alert('Please enter a name for your file!');
+            e.preventDefault(e);
         }
-      });
+        });
     });
     </script>
+    <!-- Audio Script -->
+    <script>
+        var startTime = 0;
+        var endTime = 0;
+        var breakTime = 0;
+        var numLoops = 0;
+        var vid = document.getElementById("song");
+        var stop = false;
+        var count = 0;
+        var reset_interval = null;
+        function updateOptions() {
+            console.log("OK");
+            startTime = parseInt(document.getElementById("startMin").value)*60 + parseInt(document.getElementById("startSec").value);
+            endTime = parseInt(document.getElementById("endMin").value)*60 + parseInt(document.getElementById("endSec").value)+1;
+            breakTime = parseInt(document.getElementById("breakTime").value);
+            numLoops = parseInt(document.getElementById("loopCount").value);
+            count = numLoops;
+            loop();
+        }
+        function loop() {
+            if(count > 0){
+                vid.currentTime = startTime;
+                reset_interval = setInterval(pause, (endTime-startTime)*1000 );
+                vid.play();
+            }
+        }
+        function pause() {
+            vid.pause();
+            count--;
+            clearInterval(reset_interval);
+            window.setTimeout(loop,breakTime*1000);
+        }
+        function reset() {
+            vid.currentTime = startTime;
+            count--;
+            loop();
+        }
+    </script>
     <footer>
-        <a href="https://github.com/mrdanshih/mloop"><img alt="GitHub" src=
-        "images/octocat.png"></a>
+        <a href="https://github.com/mrdanshih/mloop"><img alt="GitHub" src="images/octocat.png"></a>
     </footer>
 </body>
 </html>
