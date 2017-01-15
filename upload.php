@@ -38,11 +38,15 @@ if(isset($_FILES['fileToUpload'])){
     }
 }
 
-if(isset($_REQUEST["submit"])){
+if(isset($_REQUEST["submitUpload"])){
     $display_name= $_REQUEST['displayName'];
 }
 
-$sql = "INSERT INTO music VALUES ('$display_name', '$save_path')";
+$largest_order = mysqli_query($conn, "SELECT MAX(listOrder) FROM music");
+$row = mysqli_fetch_row($largest_order);
+$new_largest = $row[0]+ 1;
+
+$sql = "INSERT INTO music VALUES ('$display_name', '$save_path', '$new_largest')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
@@ -51,4 +55,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

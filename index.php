@@ -10,7 +10,7 @@
     <div id="title"><img alt="Repl▶y!: Music On Loop" src="images/logo.png"></div>
     <div id="main">
         <div id="player">
-            <audio id="song" autostart="0" controls="" src="PLACEHOLDER.mp3">
+            <audio id="song" autostart="0" controls="" src="process.php">
                 <source src="mm.ogv" type="video/ogv">
                 <source src="mm.mp3" type="video/mp3">
             </audio>
@@ -45,15 +45,15 @@
     <div id="sidebar">
         <div id="songlist">
             <h1>List of Songs</h1>
-            <form action="sendMusic.php" enctype="multipart/form-data" method="post">
-                <select name="selectedSong">
+            <form action="changeSongRank.php" enctype="multipart/form-data" method="post">
+                <select name="songsList" id="songsList">
                     <?php
     				$servername = "localhost";
     				$username = "dan";
     				$password = "hello";
     				$dbname = "mlooper";
     				$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
-    				$sql_query = mysqli_query($conn, "SELECT name FROM music");
+    				$sql_query = mysqli_query($conn, "SELECT name FROM music ORDER BY listOrder DESC");
     				while($row = $sql_query->fetch_assoc()){
     				    echo "<option>" . $row['name'] . "</option>";
     				}
@@ -64,13 +64,13 @@
         </div>
         <div id="upload">
             <h1>Upload</h1>
-            <form action="upload.php" enctype="multipart/form-data" method="post">
+            <uploadform><form action="upload.php" enctype="multipart/form-data" method="post">
                 <uploadfile>
                     <input id="fileToUpload" accept=".mp3,.wav,.m4a,.aac"  name="fileToUpload" type="file">
                     <input id="filename" name="displayName" placeholder="File Name" type="text">
                     <input class="buttonTransition" name="submitUpload" type="submit" value="Submit">
                 </uploadfile>
-            </form>
+            </form></uploadform>
         </div>
     </div>
     <!--Extension check-->
@@ -88,7 +88,7 @@
     <script type='text/javascript'>
     $(document).ready(function() {
         //option A
-        $("form").submit(function(e) {
+        $("uploadform").submit(function(e) {
             if ($("#fileToUpload").val() == '') {
                 alert('Please select a file!');
                 e.preventDefault(e);
