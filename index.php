@@ -13,10 +13,11 @@
     <div id="main">
         <!--Place audio player here-->
         <div id="player">
-            <audio controls="">
             <!--Need to change this to correspond to chosen music file-->
-
+            <audio id="player" src="sendMusic.php" controls="controls">
+              Your browser does not support the audio element.
             </audio>
+
         </div><!--need to add skip previous and next buttons-->
         <div id="options">
             <h1>Options</h1>
@@ -49,7 +50,7 @@
         <!--Place title bar here "list of songs"-->
         <h1>List of Songs</h1><!--Place music file list here-->
 
-				<select name='songs'>
+				<select name='songs_list' id='songs_list'>
 				  <?php
 				  $servername = "localhost";
 				  $username = "dan";
