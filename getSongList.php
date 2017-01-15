@@ -4,9 +4,9 @@ $username = "dan";
 $password = "hello";
 $dbname = "mlooper";
 
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 // Check connection
 echo "<select name='songs'>";
 if ($conn->connect_error) {
