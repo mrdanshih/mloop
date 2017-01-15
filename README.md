@@ -1,8 +1,8 @@
 # mloop
-# Overview
+## Overview
 REPLAY! is a Web app for sharing and looping music online. 
 
-# Features
+## Features
 Sharing:
 <ul>
 <li> Upload music files from any device accessing the site (for the purposes of the Hackathon, the site is hosted on a local server) </li>
@@ -18,24 +18,28 @@ Several looping options provided.
 <li>  Include a delay between loops  </li>
 </ul>
 
-# Introduction
+## Introduction
 
 Developed at Hack UCI 2017, in 36 hours.
 
 
-# Conceptual UI
+## Conceptual UI
 Though not fully deployed outside of a local server, a far more basic version of the front end UI can be viewed here: https://mloop.herokuapp.com/
 
 
-# Demos
+## Demos
 Overall Demo - Uploading and Playing Music <br>
-[![Demo CountPages alpha](https://j.gifs.com/Y6ZZyO.gif)](https://www.youtube.com/watch?v=4wBOG2igDRE&feature=youtu.be)
+[![Demo CountPages alpha](https://j.gifs.com/Y6ZZyO.gif)](https://youtu.be/fMZb3RRcbJ4)
 
 Looping A Set Number Of Times <br>
-[![Demo CountPages alpha](https://j.gifs.com/DRxxW6.gif)](https://youtu.be/QTGC6JhqDTs)
+[![Demo CountPages alpha](https://j.gifs.com/DRxxW6.gif)](https://youtu.be/QBSQhSNAivI)
 
 
 Looping A Set Number Of Times with Delay <br>
 [![Demo CountPages alpha](https://j.gifs.com/1jMM3Z.gif)](
-https://youtu.be/kjL0-ytcJ0Q
+https://youtu.be/-qYLy7YW8Io
 )
+
+Built from scratch using an Apache Server (XAAMP), MySQL, PHP, HTML/CSS, JavaScript/jQuery
+
+## Contributors
