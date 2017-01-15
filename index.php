@@ -41,7 +41,7 @@
                         </td>
                     </tr>
                 </tbody>
-            </table><button class="buttonTranstition" type="button">Apply</button>
+            </table><button class="buttonTransition" type="button">Apply</button>
         </div>
     </div>
     <div id="sidebar">
@@ -60,7 +60,7 @@
 				}
 				?>
             </select>
-            <input class="buttonTranstition" name="submitList" type="submit" value="Play">
+            <input class="buttonTransition" name="submitList" type="submit" value="Play">
         </div>
         <div id="upload">
             <h1>Upload</h1>
@@ -68,7 +68,7 @@
                 <uploadfile>
                     <input id="fileToUpload" accept=".mp3,.wav,.m4a,.aac"  name="fileToUpload" type="file">
                     <input id="filename" name="displayName" placeholder="File Name" type="text">
-                    <input class="buttonTranstition" name="submitUpload" type="submit" value="Submit">
+                    <input class="buttonTransition" name="submitUpload" type="submit" value="Submit">
                 </uploadfile>
             </form>
         </div>
