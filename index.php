@@ -83,6 +83,18 @@
                 $("#fileToUpload").val('')
         }});
     </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type='text/javascript'>
+    $(document).ready(function() {
+      //option A
+      $("form").submit(function(e){
+        if ($("#fileToUpload").val() == ''){
+          alert('Please select a file!');
+          e.preventDefault(e);
+        }
+      });
+    });
+    </script>
     <footer>
         <a href="https://github.com/mrdanshih/mloop"><img alt="GitHub" src=
         "images/octocat.png"></a>
