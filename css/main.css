@@ -1,6 +1,6 @@
 :root {
     --main-color: #22B14C;
-    --secondary-color: #2D4739;
+    --secondary-color: #23372C;
     --dark-color: #121619;
     --light-color: #FBFFFE;
     --border-width-default: 2px;
@@ -86,8 +86,8 @@ footer img {
     width: 90%;
     margin: auto;
 }
-#options table::placeholder {
-    color: var(--dark-color);
+::-webkit-input-placeholder {
+    color: var(--secondary-color);
 }
 #sidebar {
     margin-left: 60%;
