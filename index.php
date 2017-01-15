@@ -5,8 +5,7 @@
     <link href="images/favicon.ico" rel="icon" type="image/png">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>REPL▶Y!</title>
-    <script src="jquery.js">
-    </script>
+    <script src="jquery.js"></script>
 </head>
 <body>
     <div id="title"><img alt="Repl▶y!: Music On Loop" src=
