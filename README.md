@@ -27,7 +27,7 @@ Developed at Hack UCI 2017, in 36 hours.
 Though not fully deployed outside of a local server, a far more basic version of the front end UI can be viewed here: https://mloop.herokuapp.com/
 
 
-## Demos
+## Demos - Click GIFS to view videos with sound
 Overall Demo - Uploading and Playing Music <br>
 [![Demo CountPages alpha](https://j.gifs.com/Y6ZZyO.gif)](https://youtu.be/fMZb3RRcbJ4)
 
