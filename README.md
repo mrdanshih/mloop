@@ -18,9 +18,6 @@ Several looping options provided.
 <li>  Include a delay between loops  </li>
 </ul>
 
-## Conceptual UI
-Though not fully deployed outside of a local server, a far more basic version of the front end UI can be viewed here: https://mloop.herokuapp.com/
-
 
 ## Demos - Click GIFS to view videos with sound
 Overall Demo - Uploading and Playing Music <br>
@@ -36,6 +33,13 @@ https://youtu.be/-qYLy7YW8Io
 )
 
 Built from scratch using an Apache Server (XAAMP), MySQL, PHP, HTML/CSS, JavaScript/jQuery
+
+## Deployment / Details
+* REPLAY! has currently only been developed around a locally-based server, set-up by a computer, and having other devices access the web-app through the Local Area Network (typically, just the IP address and the main index.php file, in the form 111.111.11.111/index.php, for example)
+* The web app coan set up on any local server by starting an Apache server on a device whose root folder is the <i>mloop</i> folder, containing the css, images, songs folders, as well as all of the .php and .js files. Acccess to the webapp would then be available using the server's IP address and the index.php file in the URL, as described before. Uploaded music files are stored in the <i>songs</i> directory of the root <i>mloop</i> folder.
+* The main next step that could be taken for this project is deploying it on a cloud-based server as opposed to relying on local severs - a very incomplete deployment is shown here: <a href="https://mloop.herokuapp.com/"></a>, where only a portion of the main web app has been deployed. With time, a complete deployment is definitely possible with tweaks.
+
+
 
 ## Contributors
 * Agnes Jang 
