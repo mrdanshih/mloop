@@ -23,7 +23,7 @@ if(isset($_FILES['fileToUpload'])){
     $file_type=$_FILES['fileToUpload']['type'];
     $file_ext=strtolower(end(explode('.',$_FILES['fileToUpload']['name'])));
 
-    $expensions= array("mp3","m4a","wav", "aac");
+    $expensions= array("mp3","m4a","wav","aac");
 
     if(in_array($file_ext,$expensions)=== false){
        $errors[]="extension not allowed, please choose validl mp3, m4a, wav, aac.";
