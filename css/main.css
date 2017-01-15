@@ -1,6 +1,6 @@
 :root {
     --main-color: #22B14C;
-    --secondary-color: #001427;
+    --secondary-color: #2D4739;
     --dark-color: #121619;
     --light-color: #FBFFFE;
     --border-width-default: 2px;
@@ -28,6 +28,7 @@ footer {
     text-align: center;
 }
 footer img {
+    margin-top: 1%;
     height: 75%;
 }
 #options input {
@@ -50,9 +51,8 @@ footer img {
     width: 100%;
     margin-top: 10px;
     background-color: var(--main-color);
-    border-width: var(--border-width-default);
     border-radius: var(--border-radius-default);
-    border-color: var(--secondary-color);
+    border: var(--border-width-default) solid var(--secondary-color);
     color: var(--light-color);
     padding: 10px 20px;
     text-align: center;
@@ -64,7 +64,6 @@ footer img {
 }
 .buttonTranstition:hover {
     background-color: var(--secondary-color);
-    color: var(--light-color);
 }
 #title {
     width: 100%;
