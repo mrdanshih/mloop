@@ -5,7 +5,6 @@
     <link href="images/favicon.ico" rel="icon" type="image/png">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>REPL▶Y!</title>
-    <script src="jquery.js"></script>
 </head>
 <body>
     <div id="title"><img alt="Repl▶y!: Music On Loop" src=
@@ -63,25 +62,22 @@
         </div>
         <div id="upload">
             <h1>Upload</h1>
-            <form action="upload.php" enctype="multipart/form-data" method=
-            "post">
-                <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
-                "fileToUpload" type="file"> <input name="displayName"
-                placeholder="File Name" type="text"> <input name="submit" type=
-                "submit" value="Submit">
-            </form>
+            <uploadfile action="upload.php" enctype="multipart/form-data" method="post">
+                <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name="fileToUpload" type="file">
+                <input name="displayName" placeholder="File Name" type="text">
+                <input name="submit" type="submit" value="Submit">
+            </uploadfile>
         </div>
-    </div><!--Extension check-->
-    <script src="jquery.js">
-    </script>
+    </div>
+    <!--Extension check-->
+    <script src="jquery.js"></script>
     <script>
-      $( "uploadfile" ).change(function() {
-      var fileext = $("#fileToUpload").val().split('.').pop();
-      if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
-        alert('invalid extension!');
-        $("#fileToUpload").val('')
-      }
-    });
+        $( "uploadfile" ).change(function() {
+            var fileext = $("#fileToUpload").val().split('.').pop();
+            if($.inArray(fileext, ['wav','mp3','m4a','aac']) == -1) {
+                alert('invalid extension!');
+                $("#fileToUpload").val('')
+        }});
     </script>
     <footer>
         <a href="https://github.com/mrdanshih/mloop"><img alt="GitHub" src=
