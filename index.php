@@ -14,7 +14,9 @@
         <!--Place audio player here-->
         <div id="player">
             <audio controls="">
-            <!--Need to change this to correspond to chosen music file--></audio>
+            <!--Need to change this to correspond to chosen music file-->
+
+            </audio>
         </div><!--need to add skip previous and next buttons-->
         <div id="options">
             <h1>Options</h1>
@@ -43,19 +45,37 @@
         </div>
     </div>
     <div id="sidebar">
+        <!--Song List-->
         <!--Place title bar here "list of songs"-->
         <h1>List of Songs</h1><!--Place music file list here-->
-        <select>
-            <option value="paris.mp3">
-                Paris - The Chainsmokers, Louane
-            </option>
-        </select>
+
+				<select name='songs'>
+				  <?php
+				  $servername = "localhost";
+				  $username = "dan";
+				  $password = "hello";
+				  $dbname = "mlooper";
+
+				  $conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
+
+				  $sql_query = mysqli_query($conn, "SELECT name FROM music");
+
+				  while($row = $sql_query->fetch_assoc()){
+				    echo "<option>" . $row['name'] . "</option>";
+				  }
+				  ?>
+				</select>
+
+
         <form action="upload.php" enctype="multipart/form-data" method="post">
             <uploadfile><input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
             "fileToUpload" type="file"> <input name="displayName" type="text"></uploadfile>
             <input name="submit" type="submit" value="Submit">
         </form>
+
     </div>
+
+    <!--Extension check-->
     <script src="jquery.js"></script>
     <script>
       $( "uploadfile" ).change(function() {
