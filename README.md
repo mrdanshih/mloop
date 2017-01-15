@@ -1,6 +1,6 @@
 # mloop
 # Overview
-REPL▶Y! is a Web app for sharing and looping music online. 
+REPLAY! is a Web app for sharing and looping music online. 
 
 # Features
 Sharing:
