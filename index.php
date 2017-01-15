@@ -10,9 +10,8 @@
     <div id="title"><img alt="Repl▶y!: Music On Loop" src="images/logo.png"></div>
     <div id="main">
         <div id="player">
-            <audio id="song" autostart="0" controls="" src="retrieveMusic.php">
-                <source src="mm.ogv" type="video/ogv">
-                <source src="mm.mp3" type="video/mp3">
+            <audio id="song" autoplay controls="" src="retrieveMusic.php">
+
             </audio>
         </div>
         <div id="options">
@@ -102,6 +101,11 @@
     </script>
     <!-- Audio Script -->
     <script>
+        myAudio=document.getElementById('song');
+        // myAudio.addEventListener('canplaythrough', function() {
+        //   if(this.currentTime < 100){this.currentTime = 100;}
+        //   this.play();
+        // });
         var startTime = 0;
         var endTime = 0;
         var breakTime = 0;
