@@ -1,6 +1,7 @@
 :root {
     --main-color: #0E6BA8;
     --secondary-color: #001427;
+    --tertiary-color: #3DA5D9;
     --light-color: #ECF8F8;
     --border-width-default: 2px;
     --border-radius-default: 5px;
@@ -22,7 +23,7 @@ body {
     font-size: 16px;
 }
 footer {
-    height: 20%;
+    height: 25%;
     background-color: var(--secondary-color);
     text-align: center;
 }
@@ -82,6 +83,9 @@ button:hover {
 #options {
     width: 90%;
     margin: auto;
+}
+#options table::placeholder {
+    color: var(--tertiary-color);
 }
 #sidebar {
     margin-left: 60%;
