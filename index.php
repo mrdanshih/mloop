@@ -2,6 +2,7 @@
 <html lang='en'>
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>REPL▶Y!</title>
     <script src="jquery.js">
