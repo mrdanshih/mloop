@@ -32,7 +32,7 @@ footer img {
 }
 #options input {
     width: 100px;
-    padding: 12px 20px;
+    padding: 10px 10px;
     margin: 0;
     box-sizing: border-box;
     background-color: var(--main-color);
@@ -101,7 +101,7 @@ button:hover {
 }
 #sidebar input[type="text"] {
     width: 200px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin: 0;
     box-sizing: border-box;
     background-color: var(--main-color);

@@ -13,21 +13,19 @@
     <div id="main">
         <!--Place audio player here-->
         <div id="player">
-            <audio controls="">
-            <!--Need to change this to correspond to chosen music file-->
-
-            </audio>
+            <audio autoplay="" controls="" loop="">
+            <!--Need to change this to correspond to chosen music file--></audio>
         </div><!--need to add skip previous and next buttons-->
         <div id="options">
             <h1>Options</h1>
             <table>
                 <tbody>
                     <tr>
-                        <td>Number of times to play song:<input></td>
+                        <td>Number of times to play song:<input placeholder="count"></td>
                         <td><button type="button">Apply</button></td>
                     </tr>
                     <tr>
-                        <td>Gap time in between playbacks:<input></td>
+                        <td>Gap time in between playbacks:<input placeholder="seconds"></td>
                         <td><button type="button">Apply</button></td>
                     </tr>
                     <tr>
@@ -45,38 +43,30 @@
         </div>
     </div>
     <div id="sidebar">
-        <!--Song List-->
-        <!--Place title bar here "list of songs"-->
-        <h1>List of Songs</h1><!--Place music file list here-->
-
-				<select name='songs'>
-				  <?php
-				  $servername = "localhost";
-				  $username = "dan";
-				  $password = "hello";
-				  $dbname = "mlooper";
-
-				  $conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
-
-				  $sql_query = mysqli_query($conn, "SELECT name FROM music");
-
-				  while($row = $sql_query->fetch_assoc()){
-				    echo "<option>" . $row['name'] . "</option>";
-				  }
-				  ?>
-				</select>
-
-
+        <h1>List of Songs</h1>
+        <select name='songs'>
+            <?php
+			$servername = "localhost";
+			$username = "dan";
+			$password = "hello";
+			$dbname = "mlooper";
+			$conn = new mysqli($servername, $username, $password, $dbname) or die("Connection failed: " . $conn->connect_error);
+			$sql_query = mysqli_query($conn, "SELECT name FROM music");
+			while($row = $sql_query->fetch_assoc()){
+			    echo "<option>" . $row['name'] . "</option>";
+			}
+			?>
+        </select>
+        <h1>Upload</h1>
         <form action="upload.php" enctype="multipart/form-data" method="post">
-            <uploadfile><input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
-            "fileToUpload" type="file"> <input name="displayName" type="text"></uploadfile>
+            <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name=
+            "fileToUpload" type="file">
+            <input name="displayName" type="text" placeholder="File Name">
             <input name="submit" type="submit" value="Submit">
         </form>
-
-    </div>
-
-    <!--Extension check-->
-    <script src="jquery.js"></script>
+    </div><!--Extension check-->
+    <script src="jquery.js">
+    </script>
     <script>
       $( "uploadfile" ).change(function() {
       var fileext = $("#fileToUpload").val().split('.').pop();
