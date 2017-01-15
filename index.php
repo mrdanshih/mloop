@@ -67,7 +67,7 @@
             <form action="upload.php" enctype="multipart/form-data" method="post">
                 <uploadfile>
                     <input id="fileToUpload" accept=".mp3,.wav,.m4a,.aac"  name="fileToUpload" type="file">
-                    <input name="displayName" placeholder="File Name" type="text">
+                    <input id="filename" name="displayName" placeholder="File Name" type="text">
                     <input class="buttonTranstition" name="submitUpload" type="submit" value="Submit">
                 </uploadfile>
             </form>
@@ -90,6 +90,10 @@
       $("form").submit(function(e){
         if ($("#fileToUpload").val() == ''){
           alert('Please select a file!');
+          e.preventDefault(e);
+        }
+        else if ($("#filename").val() == ''){
+          alert('Please enter a name for your file!');
           e.preventDefault(e);
         }
       });
