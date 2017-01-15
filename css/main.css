@@ -8,7 +8,7 @@
 }
 html {
     width: 100%;
-    height: 40%;
+    height: 90%;
     margin: auto;
     padding: 0;
     background: var(--main-color);
@@ -23,7 +23,7 @@ body {
     font-size: 16px;
 }
 footer {
-    height: 25%;
+    height: 15%;
     background-color: var(--secondary-color);
     text-align: center;
 }
@@ -32,7 +32,7 @@ footer img {
 }
 #options input {
     width: 100px;
-    padding: 12px 20px;
+    padding: 10px 10px;
     margin: 0;
     box-sizing: border-box;
     background-color: var(--main-color);
@@ -47,6 +47,8 @@ footer img {
     border-color: var(--light-color);
 }
 button {
+    width: 100%;
+    margin-top: 10px;
     background-color: var(--main-color);
     border-width: var(--border-width-default);
     border-radius: var(--border-radius-default);
@@ -70,7 +72,7 @@ button:hover {
 }
 #title img {
     display: block;
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin: auto;
 }
@@ -101,7 +103,7 @@ button:hover {
 }
 #sidebar input[type="text"] {
     width: 200px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin: 0;
     box-sizing: border-box;
     background-color: var(--main-color);
