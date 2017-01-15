@@ -8,7 +8,7 @@ $conn = new mysqli($servername, $username, $password, $dbname) or die("Connectio
 
 $display_name = $_GET["songs_list"];
 
-$sql_query = mysqli_query($conn, "SELECT file_path FROM music WHERE name = 'Adele' limit 1");
+$sql_query = mysqli_query($conn, "SELECT file_path FROM music WHERE name = 'Paris' limit 1");
 $query_row = mysqli_fetch_assoc($sql_query);
 $file = $query_row["file_path"];
 
@@ -19,8 +19,10 @@ $file = $query_row["file_path"];
 $extension = "mp3";
 $mime_type = "audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3";
 
+$file = "songs/Stone.m4a";
 
 if(file_exists($file)){
+
     header('Content-type: {$mime_type}');
     header('Content-length: ' . filesize($file));
     header('Content-Disposition: filename="' . $filename);
