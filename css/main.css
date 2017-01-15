@@ -46,7 +46,7 @@ footer img {
 #options input:focus {
     border-color: var(--light-color);
 }
-button {
+.button_transition {
     width: 100%;
     margin-top: 10px;
     background-color: var(--main-color);
@@ -60,8 +60,9 @@ button {
     font-size: 16px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    outline: none;
 }
-button:hover {
+.button_transition:hover {
     background-color: var(--secondary-color);
     color: var(--light-color);
 }

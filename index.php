@@ -41,7 +41,7 @@
                         </td>
                     </tr>
                 </tbody>
-            </table><button type="button">Apply</button>
+            </table><button class="button_transition" type="button">Apply</button>
         </div>
     </div>
     <div id="sidebar">
@@ -62,11 +62,13 @@
         </div>
         <div id="upload">
             <h1>Upload</h1>
-            <uploadfile action="upload.php" enctype="multipart/form-data" method="post">
-                <input accept=".mp3,.wav,.m4a,.aac" id="fileToUpload" name="fileToUpload" type="file">
-                <input name="displayName" placeholder="File Name" type="text">
-                <input name="submit" type="submit" value="Submit">
-            </uploadfile>
+            <form action="upload.php" enctype="multipart/form-data" method="post">
+                <uploadfile>
+                    <input id="fileToUpload" accept=".mp3,.wav,.m4a,.aac"  name="fileToUpload" type="file">
+                    <input name="displayName" placeholder="File Name" type="text">
+                    <input class="button_transition" name="submit" type="submit" value="Submit">
+                </uploadfile>
+            </form>
         </div>
     </div>
     <!--Extension check-->
